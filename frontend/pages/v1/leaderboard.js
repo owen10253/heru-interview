@@ -15,11 +15,8 @@ export default function Leaderboard() {
 
   const { data, error } = useSWR('/api/v1/leaderboard', fetch)
 
-  console.log(data, 'DATA')
-
   if (process.browser) {
     // Client-side-only code
-    console.log(router.query.event_name);
   }
 
   useEffect(() => {
