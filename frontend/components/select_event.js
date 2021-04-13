@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-export default function SelectEvent({ setEvent, setView, view }) {
+export default function SelectEvent({ setEvent, setView, view, submit }) {
 
   const [menu, toggleMenu] = useState(false);
   const [inputValue, setInput] = useState('');
@@ -29,8 +29,8 @@ export default function SelectEvent({ setEvent, setView, view }) {
   }
 
   return (
-    <div className="">
-      <form className="bg-white shadow-lg border-gray-100 border-2 rounded px-8 pt-6 pb-8 mb-4">
+    <>
+      <form onSubmit={(e) => { submit(e, inputValue) }} className="bg-white shadow-lg border-gray-100 border-2 rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 text-xl font-bold mb-2" htmlFor="eventname">
             Event Name
@@ -41,7 +41,7 @@ export default function SelectEvent({ setEvent, setView, view }) {
         <div className="flex justify-between">
           <div className="inline-block relative">
             <button onClick={() => { toggleMenu(!menu) }} type="button" className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
-              <span className="mr-1">Options</span>
+              <span className="mr-1">Range</span>
               <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
             </button>
             <ul className={"absolute text-gray-100 pt-1 " + (menu ? "" : "hidden")}>
@@ -55,6 +55,6 @@ export default function SelectEvent({ setEvent, setView, view }) {
           <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Submit" />
         </div>
       </form>
-    </div>
+    </>
   )
 }
