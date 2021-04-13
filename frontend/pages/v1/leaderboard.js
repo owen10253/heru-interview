@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 
+const fetcher = url => fetch(url).then(res => res.json())
+
 export default function Leaderboard() {
   const router = useRouter();
 
@@ -13,7 +15,8 @@ export default function Leaderboard() {
   const [page, setPage] = useState();
   const [sortOrder, setOrder] = useState();
 
-  const { data, error } = useSWR('/api/v1/leaderboard', fetch)
+  const {data, error} = useSWR('http://localhost:3080/leaderboard?event_name=league of legend&view=hundred', fetcher)
+  console.log(data)
 
   if (process.browser) {
     // Client-side-only code
