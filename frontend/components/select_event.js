@@ -28,6 +28,7 @@ export default function SelectEvent({ setEvent, setView, view, submit }) {
     toggleMenu(!menu);
   }
 
+  // This component is the searching box in Leaderboard V1 page. 
   return (
     <>
       <form onSubmit={(e) => { submit(e, inputValue) }} className="bg-white shadow-lg border-gray-100 border-2 rounded px-8 pt-6 pb-8 mb-4">

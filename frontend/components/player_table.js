@@ -1,7 +1,11 @@
 import TableCell from './table_cell'
 
 export default function PlayerTable({ data, page, event_name }) {
+  // item per page
   const num = 100;
+  // construct the Leaderboard table with data from GET request. 
+  // --- xxx ---
+  // Sorting logic still need to implemented. 
   return (
     <div className="">
       <div className="py-8 text-2xl">{event_name?.toUpperCase()} Leaderboard V1</div>

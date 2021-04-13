@@ -1,8 +1,6 @@
 var mysql = require('mysql');
 
-// Create a database connection and export it from this file.
-// You will need to connect with the user "root", no password,
-// and to the database "leaderboard".
+// Create data and use MySQL package to connect to the database. 
 
 var db = mysql.createConnection({
   host: "localhost",

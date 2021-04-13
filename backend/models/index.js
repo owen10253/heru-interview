@@ -4,7 +4,8 @@ module.exports = {
   leaderboard: {
     get: (req, res) => {
       var top100 = req.query.view === 'hundred';
-      //var sqlStr = 'select ' + top100 + ' * from events where event_name = "' + req.query.event_name + '"';
+      
+      // SQL query to retrieve the data from the database. 
       var sqlStr = `
       select BIN_TO_UUID(score_id) as "id", players.name, scores.score, players.pic
         , dense_rank() over (partition by events.event_id order by scores.score) as 'rank'
