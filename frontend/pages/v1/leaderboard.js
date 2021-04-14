@@ -47,7 +47,7 @@ export default function Leaderboard() {
   }
 
   return (
-    <div className="bg-green-100">
+    <div className=" bg-indigo-200">
       <Head>
         <title>Leaderboard App</title>
       </Head>
@@ -57,10 +57,10 @@ export default function Leaderboard() {
       </div>
 
       <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-        <div className="bg-blue-50 px-4 py-5 sm:px-6">
+        <div className="bg-blue-100 px-4 py-5 sm:px-6">
           <SelectEvent setEvent={setEvent} setView={setView} view={view} submit={submit} />
         </div>
-        <div className="flex text-center justify-center bg-blue-100 px-4 py-5 sm:p-6">
+        <div className="flex text-center justify-center bg-yellow-50 px-4 py-5 sm:p-6">
           <PlayerTable data={data} page={page} sortOrder={sortOrder} event_name={event_name} />
         </div>
       </div>
